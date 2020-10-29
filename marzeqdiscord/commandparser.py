@@ -47,9 +47,6 @@ class Param:
     def dict(self):
         return {self.param_name: self.param_value}
 
-    def __str__(self):
-        raise Exception("To get the dict use Param.dict")
-
 
 class Flag(Arg):
     pass
