@@ -1,5 +1,5 @@
 from discord.ext.commands import Bot
-import inspect
+import discord
 
 
 class CommandParser:
@@ -9,7 +9,7 @@ class CommandParser:
         def wrapper(client: Bot):
 
             @client.event
-            async def on_message(message):
+            async def on_message(message: discord.Message):
                 invoke_command = client.command_prefix + command.__name__
 
                 if message.content.startswith(client.command_prefix + command.__name__):
