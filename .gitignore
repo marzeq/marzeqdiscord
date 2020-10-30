@@ -1,4 +1,5 @@
 *__pycache__/
 *.py[cod]
-# A file for testing purposes that contains my bot token
+# A file for testing purposes and my token
 main.py
+token.txt
