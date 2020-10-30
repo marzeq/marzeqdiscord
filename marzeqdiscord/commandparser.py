@@ -19,12 +19,16 @@ class CommandParser:
                     params = []
                     args = []
 
+                    skip = False
                     for pos in range(len(bare_args)):
+                        if skip:
+                            skip = False
+                            continue
                         if bare_args[pos].startswith("--"):
                             flags.append(Flag(bare_args[pos]))
                         elif bare_args[pos].startswith("-"):
-                            params.append(Param(bare_args[pos], bare_args[pos + 1])) if pos < len(bare_args) - 1 else lambda: None
-                            pos += 1
+                            params.append(Param(bare_args[pos], bare_args[pos + 1])) if pos < len(bare_args) - 1 and not bare_args[pos + 1].startswith("-") else lambda: None
+                            skip = True
                         else:
                             args.append(Arg(bare_args[pos]))
 
