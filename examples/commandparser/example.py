@@ -6,8 +6,20 @@ from typing import List
 client = Bot(command_prefix="YOUR DESIRED COMMAND PREFIX")
 
 
-@commandparser.CommandParser.command
-async def example_command(invoked_message: discord.Message, args: List[commandparser.Arg], params: List[commandparser.Param], flags: List[commandparser.Flag]):
+cmdparser = commandparser.CommandParser()
+
+
+@client.event
+async def on_ready():
+    print("Working")
+
+
+@cmdparser.command
+async def example_command(message: discord.Message,
+                          args: List[commandparser.Arg],
+                          params: List[commandparser.Param],
+                          flags: List[commandparser.Flag],
+                          required=["aaa", "askhfd"]):
     strargs = []
     strparams = []
     strflags = []
@@ -18,7 +30,7 @@ async def example_command(invoked_message: discord.Message, args: List[commandpa
     for flag in flags:
         strflags.append(flag.value)
 
-    await invoked_message.channel.send(f"Args: {strargs}, Params: {strparams}, Flags: {strflags}")
+    await message.channel.send(f"Args: {strargs}, Params: {strparams}, Flags: {strflags}")
 
 
 example_command(client)
