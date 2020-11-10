@@ -3,3 +3,7 @@
 # A file for testing purposes and my token
 main.py
 token.txt
+setup.py
+marzeqdiscord.egg-info
+build
+dist

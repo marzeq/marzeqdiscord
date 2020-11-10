@@ -1,1 +1,2 @@
 discord.py>=1.5.1
+setuptools>=45.2.0
