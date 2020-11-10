@@ -5,7 +5,7 @@ setup(
     version='0.1',
     packages=['marzeqdiscord'],
     url='https://github.com/marzeq/marzeqdiscord',
-    license='Creative Commons Attribution NonCommercial (CC-BY-NC) ',
+    license='Creative Commons Attribution NonCommercial (CC-BY-NC)',
     author='marzeq',
     author_email='marzeqmarzeq@gmail.com',
     description='Custom extensions for discord.py'
